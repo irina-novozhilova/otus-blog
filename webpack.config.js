@@ -6,6 +6,7 @@ const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const glob = require("glob");
 
 const pages = glob.sync("./src/pages/*.html");
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 
 module.exports = (env) => ({
@@ -45,10 +46,10 @@ module.exports = (env) => ({
         use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
       },
       {
-        test: /\.(png|jpeg|jpg)/i,
+        test: /\.(png|jpeg|jpg|svg)/i,
         type: "asset/resource",
         generator: {
-          filename: "static/[hash][ext]",
+          filename: "images/[hash][ext]",
         },
       },
       // {
@@ -67,6 +68,14 @@ module.exports = (env) => ({
     ),
     new MiniCssExtractPlugin({
       filename: "[name]-[hash].css",
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, './src/pages/images/'),
+          to: path.resolve(__dirname, './dist/images'),
+        },
+      ]
     }),
   ],
   optimization: {
