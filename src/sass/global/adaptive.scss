@@ -24,6 +24,14 @@
   .column-wraper {
     margin: 20px 20px;
   }
+
+  .preview-box {
+    width: 100%;
+  }
+
+  .article-detail__body-article {
+    width: 100%;
+  }
 }
 
 @media screen and (max-width:821px) {
@@ -96,6 +104,8 @@
   .video {
     padding-bottom: 40px;
   }
+
+
 
 }
 

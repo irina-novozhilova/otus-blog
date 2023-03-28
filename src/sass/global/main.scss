@@ -285,5 +285,13 @@ p {
   padding-bottom: 60px;
 }
 
+.link {
+  text-decoration: none;
+  color: $color--primary-grey;
+  &:hover {
+    color: $color--primary-blue-dark;
+  }
+}
+
 
 
