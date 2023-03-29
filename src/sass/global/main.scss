@@ -43,12 +43,17 @@ p {
   & .photo {
     margin-bottom: 40px;
   }
-  & .left-column__name, .left-column__skills, .left-column__phone, .left-column__mail {
+  & .left-column__name,
+  .left-column__skills,
+  .left-column__phone,
+  .left-column__mail {
     color: $color--primary-white;
   }
 }
 
-.left-column__skills, .left-column__mail, .left-column__phone {
+.left-column__skills,
+.left-column__mail,
+.left-column__phone {
   margin-bottom: 24px;
 }
 
@@ -86,7 +91,6 @@ p {
   font-size: 24px;
   line-height: 32px;
   padding-bottom: 20px;
-
 }
 
 .image-article {
@@ -123,8 +127,8 @@ p {
   display: flex;
   gap: 60px;
   padding-bottom: 90px;
-  background: url("../pages/images/background-article.svg") no-repeat right bottom 90px;
-
+  background: url("../pages/images/background-article.svg") no-repeat right
+    bottom 90px;
 }
 
 .article-main__image {
@@ -199,7 +203,8 @@ p {
   display: flex;
   justify-content: flex-end;
   padding-bottom: 90px;
-  background: url("../pages/images/background-article.svg") no-repeat left bottom 90px;
+  background: url("../pages/images/background-article.svg") no-repeat left
+    bottom 90px;
 }
 
 .promo-block__description {
@@ -229,7 +234,7 @@ p {
   display: flex;
   width: 60%;
   //background: url("../pages/images/il6.svg") no-repeat left bottom;
-  align-items: flex-end
+  align-items: flex-end;
 }
 
 .play {
@@ -271,7 +276,8 @@ p {
   gap: 24px;
 }
 
-.views, .comments {
+.views,
+.comments {
   text-decoration: none;
   letter-spacing: 0.07em;
   text-transform: uppercase;
@@ -300,6 +306,3 @@ p {
   padding-bottom: 90px;
   justify-content: space-between;
 }
-
-
-
