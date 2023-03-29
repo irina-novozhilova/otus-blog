@@ -6,8 +6,7 @@ const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const glob = require("glob");
 
 const pages = glob.sync("./src/pages/*.html");
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = (env) => ({
   entry: {
@@ -60,11 +59,11 @@ module.exports = (env) => ({
   },
   plugins: [
     ...pages.map(
-        (el) =>
-            new HtmlWebpackPlugin({
-              filename: el.replace(/^src\/pages\//, ""),
-              template: el,
-            })
+      (el) =>
+        new HtmlWebpackPlugin({
+          filename: el.replace(/^src\/pages\//, ""),
+          template: el,
+        })
     ),
     new MiniCssExtractPlugin({
       filename: "[name]-[hash].css",
@@ -72,10 +71,10 @@ module.exports = (env) => ({
     new CopyWebpackPlugin({
       patterns: [
         {
-          from: path.resolve(__dirname, './src/pages/images/'),
-          to: path.resolve(__dirname, './dist/images'),
+          from: path.resolve(__dirname, "./src/pages/images/"),
+          to: path.resolve(__dirname, "./dist/images"),
         },
-      ]
+      ],
     }),
   ],
   optimization: {
