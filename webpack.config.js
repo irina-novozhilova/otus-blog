@@ -5,9 +5,8 @@ const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 const glob = require("glob");
 
-const pages = glob.sync("pages/*.html");
-
-const HtmlWebpackPugPlugin = require('html-webpack-pug-plugin');
+const pages = glob.sync("./src/pages/*.html");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = (env) => ({
   entry: {
@@ -42,33 +41,40 @@ module.exports = (env) => ({
         use: [MiniCssExtractPlugin.loader, "css-loader"],
       },
       {
-        test: /\.(png|jpeg|jpg)/i,
-        type: "asset/resource",
-        generator: {
-          filename: "static/[hash][ext]",
-        },
+        test: /\.s[ac]ss$/i,
+        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
       },
       {
-        test: /\.html$/i,
-        loader: "html-loader",
+        test: /\.(png|jpeg|jpg|svg)/i,
+        type: "asset/resource",
+        generator: {
+          filename: "images/[hash][ext]",
+        },
       },
+      // {
+      //   test: /\.html$/i,
+      //   loader: "html-loader",
+      // },
     ],
   },
   plugins: [
-    // ...pages.map(
-    //     (el) =>
-    //         new HtmlWebpackPlugin({
-    //           filename: el.replace(/^pages\//, ""),
-    //           template: el,
-    //         })
-    // ),
-    new HtmlWebpackPlugin({
-      filename: 'output.pug',
-      minify: false
-    }),
-    new HtmlWebpackPugPlugin(),
+    ...pages.map(
+      (el) =>
+        new HtmlWebpackPlugin({
+          filename: el.replace(/^src\/pages\//, ""),
+          template: el,
+        })
+    ),
     new MiniCssExtractPlugin({
       filename: "[name]-[hash].css",
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, "./src/pages/images/"),
+          to: path.resolve(__dirname, "./dist/images"),
+        },
+      ],
     }),
   ],
   optimization: {

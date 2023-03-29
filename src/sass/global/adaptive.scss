@@ -1,0 +1,169 @@
+@media screen and (max-width: 1200px) {
+  .container {
+    margin: 0 20px 0 23%;
+  }
+
+  .left-column {
+    width: 22%;
+  }
+
+  .column-wraper {
+    margin: 20px 20px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .container {
+    margin: 0 20px 0 23%;
+  }
+
+  .left-column {
+    width: 22%;
+  }
+
+  .column-wraper {
+    margin: 20px 20px;
+  }
+
+  .preview-box {
+    width: 100%;
+  }
+
+  .article-detail__body-article {
+    width: 100%;
+  }
+
+  .last-article {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .article-secondary {
+    width: 47%;
+  }
+}
+
+@media screen and (max-width: 821px) {
+  .h2 {
+    font-size: 32px;
+    line-height: 39px;
+  }
+
+  .h3 {
+    font-size: 22px;
+    line-height: 28px;
+  }
+
+  .left-column {
+    position: absolute;
+    top: auto;
+    bottom: 0;
+    min-height: auto;
+    width: 100%;
+    padding: 40px 0;
+  }
+
+  .container {
+    margin: 0 20px;
+    padding-bottom: 350px;
+  }
+
+  .container__section {
+    margin-bottom: 50px;
+  }
+
+  .left-column {
+    padding-bottom: 0;
+  }
+
+  .column-wraper {
+    display: flex;
+    gap: 20px;
+    margin: 0 20px;
+  }
+
+  .main-nav {
+    justify-content: space-around;
+    padding: 40px 0;
+  }
+
+  .article-main {
+    background: none;
+    padding-bottom: 40px;
+  }
+
+  .new-video {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .new-video__description,
+  .new-video__title {
+    width: 100%;
+  }
+
+  .info {
+    margin-top: 20px;
+  }
+
+  .play {
+    top: 70px;
+    background: url("../pages/images/play-hover.svg") no-repeat center center;
+  }
+
+  .video {
+    padding-bottom: 40px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .left-column {
+    padding: 20px 0;
+  }
+
+  .container {
+    margin: 0 20px;
+    padding-bottom: 350px;
+  }
+
+  .column-wraper {
+    flex-direction: column;
+  }
+
+  .article-main {
+    flex-direction: column;
+    background: none;
+    gap: 40px;
+  }
+
+  .article-main__image {
+    width: 100%;
+  }
+
+  .article-main__description {
+    width: 100%;
+  }
+
+  .last-article {
+    flex-direction: column;
+    gap: 40px;
+    padding-bottom: 40px;
+  }
+
+  .article-secondary {
+    width: 100%;
+  }
+
+  .promo-block__description {
+    width: 100%;
+  }
+
+  .promo-block {
+    background: none;
+    padding-bottom: 40px;
+  }
+
+  .container {
+    padding-bottom: 650px;
+  }
+}
