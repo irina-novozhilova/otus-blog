@@ -32,6 +32,15 @@
   .article-detail__body-article {
     width: 100%;
   }
+
+  .last-article {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .article-secondary {
+    width: 47%;
+  }
 }
 
 @media screen and (max-width:821px) {
@@ -155,7 +164,6 @@
     background: none;
     padding-bottom: 40px;
   }
-
 
   .container {
     padding-bottom: 650px;
