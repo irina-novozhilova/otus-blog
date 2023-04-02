@@ -1,10 +1,10 @@
-export function slider() {
+export function slider(sliderContainer) {
   function goNext() {
-    const slides = document.querySelectorAll(".slider li");
+    const slides = sliderContainer.querySelectorAll("li");
 
-    const activeSlide = document.querySelector(".active");
+    const activeSlide = sliderContainer.querySelector(".active");
 
-    const nextSlide = document.querySelector(".next-active");
+    const nextSlide = sliderContainer.querySelector(".next-active");
 
     let thirdSlide = nextSlide.nextElementSibling;
     if (!thirdSlide) {
@@ -28,10 +28,10 @@ export function slider() {
   }
 
   function goPrev() {
-    const slides = document.querySelectorAll(".slider li");
+    const slides = sliderContainer.querySelectorAll("li");
 
-    const activeSlide = document.querySelector(".active");
-    const prevActive = document.querySelector(".prev-active");
+    const activeSlide = sliderContainer.querySelector(".active");
+    const prevActive = sliderContainer.querySelector(".prev-active");
 
     let prevSlide = prevActive.previousElementSibling;
     if (!prevSlide) {
@@ -54,13 +54,14 @@ export function slider() {
   }
 
   function showSlides() {
-    const slides = document.querySelectorAll(".slider li");
+    let slides = sliderContainer.querySelectorAll("li");
     if (slides.length === 2) {
       const clone1 = slides[0].cloneNode(true);
       const clone2 = slides[1].cloneNode(true);
-      document.querySelector(".slider ul").append(clone1);
-      document.querySelector(".slider ul").append(clone2);
+      sliderContainer.querySelector("ul").append(clone1);
+      sliderContainer.querySelector("ul").append(clone2);
     }
+    slides = sliderContainer.querySelectorAll("li");
     slides[0].classList.add("active");
     slides[1].classList.add("next-active");
     slides[slides.length - 1].classList.add("prev-active");
@@ -88,11 +89,11 @@ export function slider() {
   });
 
   function addControls() {
-    const prev = document.querySelector(".slider .prev");
+    const prev = sliderContainer.querySelector(".prev");
     prev.addEventListener("click", () => {
       goPrev();
     });
-    const next = document.querySelector(".slider .next");
+    const next = sliderContainer.querySelector(".next");
     next.addEventListener("click", () => {
       goNext();
     });
@@ -103,5 +104,6 @@ export function slider() {
     addControls();
   }
 
-  window.addEventListener("load", initSlider);
+  // window.addEventListener("load", initSlider);
+  initSlider();
 }
