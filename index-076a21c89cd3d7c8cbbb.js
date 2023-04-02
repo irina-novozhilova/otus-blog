@@ -3,11 +3,11 @@
 var __webpack_exports__ = {};
 
 ;// CONCATENATED MODULE: ./src/slider.js
-function slider() {
+function slider(sliderContainer) {
   function goNext() {
-    var slides = document.querySelectorAll(".slider li");
-    var activeSlide = document.querySelector(".active");
-    var nextSlide = document.querySelector(".next-active");
+    var slides = sliderContainer.querySelectorAll("li");
+    var activeSlide = sliderContainer.querySelector(".active");
+    var nextSlide = sliderContainer.querySelector(".next-active");
     var thirdSlide = nextSlide.nextElementSibling;
     if (!thirdSlide) {
       thirdSlide = slides[0];
@@ -25,9 +25,9 @@ function slider() {
     thirdSlide.classList.add("next-active");
   }
   function goPrev() {
-    var slides = document.querySelectorAll(".slider li");
-    var activeSlide = document.querySelector(".active");
-    var prevActive = document.querySelector(".prev-active");
+    var slides = sliderContainer.querySelectorAll("li");
+    var activeSlide = sliderContainer.querySelector(".active");
+    var prevActive = sliderContainer.querySelector(".prev-active");
     var prevSlide = prevActive.previousElementSibling;
     if (!prevSlide) {
       prevSlide = slides[slides.length - 1];
@@ -44,13 +44,14 @@ function slider() {
     prevSlide.classList.add("prev-active");
   }
   function showSlides() {
-    var slides = document.querySelectorAll(".slider li");
+    var slides = sliderContainer.querySelectorAll("li");
     if (slides.length === 2) {
       var clone1 = slides[0].cloneNode(true);
       var clone2 = slides[1].cloneNode(true);
-      document.querySelector(".slider ul").append(clone1);
-      document.querySelector(".slider ul").append(clone2);
+      sliderContainer.querySelector("ul").append(clone1);
+      sliderContainer.querySelector("ul").append(clone2);
     }
+    slides = sliderContainer.querySelectorAll("li");
     slides[0].classList.add("active");
     slides[1].classList.add("next-active");
     slides[slides.length - 1].classList.add("prev-active");
@@ -73,11 +74,11 @@ function slider() {
     checkDirection();
   });
   function addControls() {
-    var prev = document.querySelector(".slider .prev");
+    var prev = sliderContainer.querySelector(".prev");
     prev.addEventListener("click", function () {
       goPrev();
     });
-    var next = document.querySelector(".slider .next");
+    var next = sliderContainer.querySelector(".next");
     next.addEventListener("click", function () {
       goNext();
     });
@@ -86,12 +87,14 @@ function slider() {
     showSlides();
     addControls();
   }
-  window.addEventListener("load", initSlider);
+
+  // window.addEventListener("load", initSlider);
+  initSlider();
 }
 ;// CONCATENATED MODULE: ./src/index.js
 
 
-slider();
+slider(document.querySelector(".slider"));
 /******/ })()
 ;
-//# sourceMappingURL=index-40ae806b6c76c6017bbe.js.map
+//# sourceMappingURL=index-076a21c89cd3d7c8cbbb.js.map
