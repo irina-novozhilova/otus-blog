@@ -6,7 +6,7 @@ function initHtml(numSlides) {
   sliderHtml = document.createElement("div");
   sliderHtml.classList.add("slider");
   const ul = document.createElement("ul");
-  for (let i = 1; i <= numSlides; i++) {
+  for (let i = 1; i <= numSlides; i += 1) {
     ul.append(document.createElement("li"));
   }
   sliderHtml.append(ul);
@@ -20,14 +20,15 @@ function initHtml(numSlides) {
 }
 
 function click(type, num) {
-  for (let i = 1; i <= num; i++) {
+  for (let i = 1; i <= num; i += 1) {
     sliderHtml.querySelector(`.${type}`).click();
   }
 }
 
 function check(rules) {
   const slides = sliderHtml.querySelectorAll("li");
-  for (const rule of rules) {
+  for (let i = 0; i <= rules.length - 1; i += 1) {
+    const rule = rules[i];
     expect(slides[rule[0]].classList.contains(rule[1])).toBeTruthy();
   }
 }
