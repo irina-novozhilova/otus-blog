@@ -97,4 +97,4 @@ function slider(sliderContainer) {
 slider(document.querySelector(".slider"));
 /******/ })()
 ;
-//# sourceMappingURL=index-c34b2770f605a1973af2.js.map
+//# sourceMappingURL=index-00725f69e732e7563cf4.js.map
