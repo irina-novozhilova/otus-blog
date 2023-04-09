@@ -1,0 +1,13 @@
+.contacts {
+  padding-bottom: 90px;
+}
+
+.contacts__list {
+  margin-left: 30px;
+}
+
+.contacts__list li::marker {
+  color: $color--primary-blue-dark;
+  font-size: 30px;
+  margin-left: 30px;
+}

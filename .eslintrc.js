@@ -17,6 +17,7 @@ module.exports = {
     "no-console": ["error", { allow: ["warn", "error", "log"] }],
     "no-alert": "off",
     "no-promise-executor-return": "off",
+    "prefer-destructuring": ["error", { object: true, array: false }],
   },
   globals: {
     ymaps: "writable",
